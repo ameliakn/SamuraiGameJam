@@ -42,8 +42,8 @@ target_position = Vector2(-35, 0)
 script = ExtResource("3_8gnli")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = -30.0
-offset_top = -90.0
-offset_right = 22.0
-offset_bottom = -51.0
+offset_left = -55.0
+offset_top = -129.0
+offset_right = 138.0
+offset_bottom = -52.0
 text = "test"

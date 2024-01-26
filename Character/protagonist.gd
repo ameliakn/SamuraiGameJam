@@ -11,22 +11,17 @@ extends CharacterBody2D
 @export var BASE_ACCELERATION = 20
 @export var MIN_JUMP_ACCELERATION = 120
 @export var BASE_DEACCELERATION = 40
-@export var JUMP_VELOCITY = -400.0
+@export var JUMP_VELOCITY = -600.0
 @export var INITALPOSITION = Vector2(239, 562)
 @export var gravity = 900
 @export var MIN_WALLJUMP = 50
 var leftCollide: bool
 var rightCollide: bool
 var momentum: float
+var jumpStartup: float
 var hInputDirection = 0
 var hTurnDirection = 0
 
-func wall_slide():
-	pass
-	
-func deccelarate():
-	pass
-	
 func _handle_move_input():
 	hInputDirection = Input.get_axis("dir_left", "dir_right") 
 	
@@ -46,16 +41,16 @@ func _handle_move_input():
 			else: 
 				deaccelerate(-1) 
 				
-	if(momentum > 0):
-		if(rightCollide):
-			momentum = 0
-		hTurnDirection = 1
-	elif(momentum < 0):
-		if(leftCollide):
-			momentum = 0
-		hTurnDirection = -1
-	else:
-		hTurnDirection = 0
+		if(momentum > 0):
+			if(rightCollide):
+				momentum = 0
+			hTurnDirection = 1
+		elif(momentum < 0):
+			if(leftCollide):
+				momentum = 0
+			hTurnDirection = -1
+		else:
+			hTurnDirection = 0
 	
 func _apply_gravity(delta):
 	if not is_on_floor():
@@ -91,7 +86,17 @@ func deaccelerate(direction):
 		else:
 			momentum += BASE_DEACCELERATION
 	
-
 func _detect_wall_collision():
 	leftCollide = (castLeft1.is_colliding() or castLeft2.is_colliding())
 	rightCollide = (castRight1.is_colliding() or castRight2.is_colliding())
+	
+func wall_jump():
+	velocity.y = JUMP_VELOCITY *0.5
+	if rightCollide:
+		momentum = (momentum * -1) - MIN_WALLJUMP
+		if momentum < -MAX_SPEED:
+			momentum = -MAX_SPEED
+	if leftCollide:
+		momentum = (momentum * -1) + MIN_WALLJUMP
+		if momentum > MAX_SPEED:
+			momentum = MAX_SPEED
