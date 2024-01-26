@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://h55yeavneday"]
+
+[ext_resource type="Script" path="res://Character/protagonist.gd" id="1_ewgj8"]
+[ext_resource type="Texture2D" uid="uid://d0yapvjdk5642" path="res://Assets/Protag.webp" id="2_0n72u"]
+[ext_resource type="Script" path="res://Character/PlayerSM.gd" id="3_8gnli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6tnc"]
+size = Vector2(58.375, 73.6719)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ewgj8")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.00001, -1)
+scale = Vector2(0.30805, 0.351393)
+texture = ExtResource("2_0n72u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.1875, 4.16405)
+shape = SubResource("RectangleShape2D_r6tnc")
+
+[node name="CastRight1" type="RayCast2D" parent="."]
+position = Vector2(0, -33)
+target_position = Vector2(35, 0)
+
+[node name="CastRight2" type="RayCast2D" parent="."]
+position = Vector2(0, 35)
+target_position = Vector2(35, 0)
+
+[node name="CastLeft1" type="RayCast2D" parent="."]
+position = Vector2(0, -33)
+target_position = Vector2(-35, 0)
+
+[node name="CastLeft2" type="RayCast2D" parent="."]
+position = Vector2(0, 35)
+target_position = Vector2(-35, 0)
+
+[node name="PlayerSM" type="Node" parent="."]
+script = ExtResource("3_8gnli")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = -30.0
+offset_top = -90.0
+offset_right = 22.0
+offset_bottom = -51.0
+text = "test"
