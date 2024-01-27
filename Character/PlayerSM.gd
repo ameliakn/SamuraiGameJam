@@ -77,7 +77,10 @@ func _get_transition(delta):
 			if parent.is_on_floor():
 				return states.Idle
 			if !parent.rightCollide and !parent.leftCollide:
-				return states.WallJump
+				if parent.velocity.y < 0:
+					return states.WallJump
+				else:
+					return states.Fall
 		states.WallJump:
 			if parent.rightCollide or parent.leftCollide:
 				return states.WallSlide
