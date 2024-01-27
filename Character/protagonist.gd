@@ -15,6 +15,7 @@ extends CharacterBody2D
 @export var INITALPOSITION = Vector2(239, 562)
 @export var gravity = 900
 @export var MIN_WALLJUMP = 50
+@export var WalljumpHeight = -200
 var leftCollide: bool
 var rightCollide: bool
 var momentum: float
@@ -91,7 +92,7 @@ func _detect_wall_collision():
 	rightCollide = (castRight1.is_colliding() or castRight2.is_colliding())
 	
 func wall_jump():
-	velocity.y = JUMP_VELOCITY *0.5
+	velocity.y = WalljumpHeight
 	if rightCollide:
 		momentum = (momentum * -1) - MIN_WALLJUMP
 		if momentum < -MAX_SPEED:
