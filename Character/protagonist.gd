@@ -9,6 +9,7 @@ signal character_hit
 @onready var text = $TextEdit
 @onready var StateM = $PlayerSM
 @onready var dash_range = $dash_range
+@onready var ground_recovery_timer = $GroundRecoveryTimer
 
 @export var MAX_SPEED = 1500.0
 @export var BASE_ACCELERATION = 20
@@ -22,6 +23,7 @@ signal character_hit
 @export var WalljumpHeight = -200
 @export var DASH_SPEED = 1800
 @export var DASH_DISTANCE = 100
+@export var GROUND_RECOVERY_TIME = 0.1
 
 var leftCollide: bool
 var rightCollide: bool
@@ -73,7 +75,7 @@ func _apply_movement():
 		if(is_position_reached(dashingPosition)):
 			isDashing = false
 	
-	if(!isDashing):
+	if(!isDashing and !isGroundAttacking):
 		velocity.x = momentum
 	
 	move_and_slide()	
@@ -141,6 +143,8 @@ func get_closest_enemy() -> Area2D:
 func dash_to(enemy: Area2D):
 	isDashing = true
 	var direction = position.direction_to(enemy.position)
+	if((direction.x < 0 and momentum > 0) or (direction.x > 0 and momentum < 0)):
+		momentum = momentum * -1
 	var afterMovement = direction * DASH_DISTANCE
 	var newPosition = enemy.position + afterMovement
 	dashingPosition = newPosition
@@ -172,7 +176,7 @@ func is_position_reached(target_position):
 	
 func ground_attack():
 	velocity.y = GROUND_PUND
-	momentum = 0
+	velocity.x = 0
 	isGroundAttacking = true
 
 func enemy_collision():
@@ -186,3 +190,7 @@ func enemy_collision():
 	
 func death():
 	self.queue_free()
+
+
+func _on_ground_recovery_timer_timeout():
+	isGroundAttacking = false

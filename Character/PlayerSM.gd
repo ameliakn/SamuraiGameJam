@@ -11,6 +11,7 @@ func _ready():
 	add_state("Fall")
 	add_state("GroundPound")
 	add_state("Dash")
+	add_state("GroundRecovery")
 	call_deferred("set_state", states.Idle)
 		
 func _input(event):
@@ -103,7 +104,10 @@ func _get_transition(delta):
 				return states.Dash
 		states.GroundPound:
 			if parent.is_on_floor():
-				parent.isGroundAttacking = false
+				parent.ground_recovery_timer.start(parent.GROUND_RECOVERY_TIME)
+				return states.GroundRecovery
+		states.GroundRecovery:
+			if(!parent.isGroundAttacking):
 				return states.Idle
 		states.Dash:
 			if parent.rightCollide or parent.leftCollide:

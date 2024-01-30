@@ -17,4 +17,6 @@ texture = ExtResource("1_xymrj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n270s")
 
+[node name="RespawnTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

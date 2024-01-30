@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://bgk5x8bcj5nwf"]
+[gd_scene load_steps=28 format=3 uid="uid://blr3x4fxwkwyw"]
 
+[ext_resource type="Script" path="res://Levels/fase_2.gd" id="1_0tnjt"]
 [ext_resource type="Texture2D" uid="uid://dxxu5np0kd617" path="res://Assets/nivel2.png" id="1_4vohu"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="2_gymid"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="3_tbmin"]
@@ -74,23 +75,24 @@ size = Vector2(2582.78, 343.824)
 size = Vector2(288.394, 75.7838)
 
 [node name="Fase 2" type="Node2D"]
+script = ExtResource("1_0tnjt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_4vohu")
 
-[node name="Personagem" type="Node2D" parent="."]
-position = Vector2(653.492, 884.961)
+[node name="Enemy" parent="." instance=ExtResource("3_tbmin")]
+position = Vector2(2240, 2528)
 
-[node name="CharacterBody2D" parent="Personagem" instance=ExtResource("2_gymid")]
-position = Vector2(1843.51, 1831.04)
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_gymid")]
+position = Vector2(2976, 2880)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Personagem/CharacterBody2D"]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
 remote_path = NodePath("../../Camera2D")
 
-[node name="Camera2D" type="Camera2D" parent="Personagem"]
-position = Vector2(1843.51, 1831.04)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2976, 2880)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -216,6 +218,3 @@ shape = SubResource("RectangleShape2D_wv6uw")
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(2566.82, 503.58)
 shape = SubResource("RectangleShape2D_wv6uw")
-
-[node name="FlyingEnemy3" parent="." instance=ExtResource("3_tbmin")]
-position = Vector2(2304, 2464)
