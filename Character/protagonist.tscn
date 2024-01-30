@@ -8,7 +8,7 @@
 size = Vector2(64, 124)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8fhg7"]
-radius = 162.521
+radius = 306.367
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Character"]]
 position = Vector2(1, -68)
