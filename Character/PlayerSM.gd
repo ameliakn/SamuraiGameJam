@@ -117,6 +117,9 @@ func _get_transition(delta):
 			if parent.is_on_floor():
 				parent.isDashing = false
 				return states.Idle
+			if parent.is_on_ceiling():
+				parent.isDashing = false
+				return states.Fall
 
 func _enter_state(new_state, old_state):
 	parent.text.text = str(states.find_key(new_state), ": ", parent.momentum)

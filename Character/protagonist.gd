@@ -130,9 +130,10 @@ func get_closest_enemy() -> Area2D:
 				var space_state = get_world_2d().direct_space_state
 				var query = PhysicsRayQueryParameters2D.create(enemy.position, position)
 				var result = space_state.intersect_ray(query)
-				if(result.collider_id == self.get_instance_id()):
-					closest_distance = distance
-					closest_enemy = enemy
+				if(result):
+					if(result.collider_id == self.get_instance_id()):
+						closest_distance = distance
+						closest_enemy = enemy
 		return closest_enemy
 	else:
 		return null
