@@ -64,3 +64,8 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dash_range"]
 shape = SubResource("CircleShape2D_8fhg7")
+
+[node name="GroundRecoveryTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="GroundRecoveryTimer" to="." method="_on_ground_recovery_timer_timeout"]
