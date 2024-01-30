@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Character/PlayerSM.gd" id="3_8gnli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6tnc"]
-size = Vector2(64, 124)
+size = Vector2(64, 119.164)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8fhg7"]
 radius = 306.367
@@ -14,23 +14,24 @@ radius = 306.367
 position = Vector2(1, -68)
 collision_mask = 7
 script = ExtResource("1_ewgj8")
-MAX_SPEED = 1200.0
+MAX_SPEED = 800.0
 BASE_ACCELERATION = 10
 JUMP_VELOCITY = -1200.0
 gravity = 3200
+WalljumpHeight = -900
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.999999, 8.5)
-scale = Vector2(0.309598, 0.479876)
+position = Vector2(-0.999999, 10.5)
+scale = Vector2(0.309598, 0.4613)
 texture = ExtResource("2_0n72u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.1875, 4.16405)
+position = Vector2(-1.1875, 6.58202)
 shape = SubResource("RectangleShape2D_r6tnc")
 
 [node name="CastRight1" type="RayCast2D" parent="."]
-position = Vector2(0, -55)
+position = Vector2(0, -50)
 target_position = Vector2(35, 0)
 collision_mask = 2
 
@@ -40,7 +41,7 @@ target_position = Vector2(35, 0)
 collision_mask = 2
 
 [node name="CastLeft1" type="RayCast2D" parent="."]
-position = Vector2(0, -55)
+position = Vector2(0, -50)
 target_position = Vector2(-35, 0)
 collision_mask = 2
 
