@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://fh80np778ahw"]
+[gd_scene load_steps=17 format=3 uid="uid://c1e23yn68i1mc"]
 
+[ext_resource type="Script" path="res://Levels/fase_1.gd" id="1_7j67f"]
 [ext_resource type="Texture2D" uid="uid://bj87f1brc3q16" path="res://Assets/nivel1.png" id="1_ucd5u"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="2_krxfw"]
 
@@ -43,6 +44,7 @@ size = Vector2(56.7734, 256.136)
 size = Vector2(1468.46, 132.848)
 
 [node name="Fase 1" type="Node2D"]
+script = ExtResource("1_7j67f")
 
 [node name="Fundo Da Fase" type="TextureRect" parent="."]
 offset_right = 40.0

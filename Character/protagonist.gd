@@ -143,6 +143,8 @@ func get_closest_enemy() -> Area2D:
 func dash_to(enemy: Area2D):
 	isDashing = true
 	var direction = position.direction_to(enemy.position)
+	if((direction.x < 0 and momentum > 0) or (direction.x > 0 and momentum < 0)):
+		momentum = momentum * -1
 	var afterMovement = direction * DASH_DISTANCE
 	var newPosition = enemy.position + afterMovement
 	dashingPosition = newPosition
