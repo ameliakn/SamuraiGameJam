@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://setq6r3krfui"]
+
+[ext_resource type="Script" path="res://Character/flying_enemy.gd" id="1_3use0"]
+[ext_resource type="Texture2D" uid="uid://bdn26kkoe3a2k" path="res://Assets/floor.webp" id="1_xymrj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n270s"]
+size = Vector2(64, 64)
+
+[node name="Enemy" type="Area2D" groups=["Enemies"]]
+collision_layer = 4
+script = ExtResource("1_3use0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_xymrj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n270s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

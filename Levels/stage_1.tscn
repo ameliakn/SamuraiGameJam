@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://brgwxay1docqa"]
+[gd_scene load_steps=7 format=3 uid="uid://brgwxay1docqa"]
 
-[ext_resource type="Texture2D" uid="uid://2dx5stqxdl6q" path="res://Assets/Gecko[nonlegal].jpg" id="1_l2rx1"]
 [ext_resource type="Texture2D" uid="uid://d0enhlpko4e71" path="res://Assets/wall.webp" id="2_uyp7m"]
 [ext_resource type="Texture2D" uid="uid://bdn26kkoe3a2k" path="res://Assets/floor.webp" id="3_shmk5"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="4_d4fjy"]
@@ -275,14 +274,6 @@ sources/0 = SubResource("TileSetAtlasSource_gskvs")
 sources/1 = SubResource("TileSetAtlasSource_tk3s2")
 
 [node name="Stage1" type="Node2D"]
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-offset_left = -27.0
-offset_top = 31.0
-offset_right = 3151.0
-offset_bottom = 808.0
-texture = ExtResource("1_l2rx1")
 
 [node name="FloorTileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4hua1")
