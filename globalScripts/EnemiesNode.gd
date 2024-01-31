@@ -16,3 +16,7 @@ func _on_character_body_2d_floor_hit():
 		if child.attacked:
 			child.respawn_enemy()
 
+
+
+func _on_protagonist_floor_hit():
+	pass # Replace with function body.
