@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://c1e23yn68i1mc"]
+[gd_scene load_steps=30 format=3 uid="uid://c1e23yn68i1mc"]
 
 [ext_resource type="Script" path="res://Levels/fase_1.gd" id="1_7j67f"]
 [ext_resource type="Texture2D" uid="uid://bj87f1brc3q16" path="res://Assets/nivel1.png" id="1_ucd5u"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="2_krxfw"]
+[ext_resource type="PackedScene" uid="uid://bkkdfume6jtts" path="res://Objects/enemies_node.tscn" id="4_0qb5a"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="4_4pc0y"]
 [ext_resource type="AudioStream" uid="uid://djg27aw4l346m" path="res://Assets/MusicaCyberJam1.mp3" id="5_8bsko"]
 
@@ -76,6 +77,7 @@ size = Vector2(218.085, 911.565)
 size = Vector2(199.714, 693.71)
 
 [node name="Fase 1" type="Node2D"]
+position = Vector2(-7, 0)
 script = ExtResource("1_7j67f")
 
 [node name="Fundo Da Fase" type="TextureRect" parent="."]
@@ -86,13 +88,13 @@ texture = ExtResource("1_ucd5u")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2784, 736)
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="CharacterBody2D" parent="Node2D" instance=ExtResource("2_krxfw")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_krxfw")]
 position = Vector2(2784, 736)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Node2D/CharacterBody2D"]
-remote_path = NodePath("../../../Camera2D")
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Node2D" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 960)
@@ -199,20 +201,20 @@ shape = SubResource("RectangleShape2D_5p8vk")
 position = Vector2(8497.97, -622.107)
 shape = SubResource("RectangleShape2D_lnkb1")
 
-[node name="Inimigos" type="Node2D" parent="."]
-
-[node name="Enemy" parent="Inimigos" instance=ExtResource("4_4pc0y")]
-position = Vector2(4640, 800)
-
-[node name="Enemy2" parent="Inimigos" instance=ExtResource("4_4pc0y")]
-position = Vector2(5792, 512)
-
-[node name="Enemy3" parent="Inimigos" instance=ExtResource("4_4pc0y")]
-position = Vector2(8416, 800)
-
-[node name="Enemy4" parent="Inimigos" instance=ExtResource("4_4pc0y")]
-position = Vector2(8928, 288)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_8bsko")
 autoplay = true
+
+[node name="EnemiesNode" parent="." instance=ExtResource("4_0qb5a")]
+
+[node name="Enemy" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
+position = Vector2(4640, 800)
+
+[node name="Enemy2" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
+position = Vector2(5792, 512)
+
+[node name="Enemy3" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
+position = Vector2(8416, 800)
+
+[node name="Enemy4" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
+position = Vector2(8928, 288)
