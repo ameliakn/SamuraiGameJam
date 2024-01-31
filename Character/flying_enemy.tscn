@@ -1,22 +1,68 @@
-[gd_scene load_steps=4 format=3 uid="uid://setq6r3krfui"]
+[gd_scene load_steps=10 format=3 uid="uid://setq6r3krfui"]
 
 [ext_resource type="Script" path="res://Character/flying_enemy.gd" id="1_3use0"]
-[ext_resource type="Texture2D" uid="uid://bdn26kkoe3a2k" path="res://Assets/floor.webp" id="1_xymrj"]
+[ext_resource type="Texture2D" uid="uid://bp516brnghxvl" path="res://Assets/Sprites/Drone.png" id="3_r5xe4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n270s"]
-size = Vector2(64, 64)
+size = Vector2(74, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqpb2"]
+atlas = ExtResource("3_r5xe4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kyf5"]
+atlas = ExtResource("3_r5xe4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqoqf"]
+atlas = ExtResource("3_r5xe4")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_473ii"]
+atlas = ExtResource("3_r5xe4")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npxu8"]
+atlas = ExtResource("3_r5xe4")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gme5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqpb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kyf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqoqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_473ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npxu8")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="Area2D" groups=["Enemies"]]
 collision_layer = 4
 script = ExtResource("1_3use0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_xymrj")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 0.5)
 shape = SubResource("RectangleShape2D_n270s")
 
 [node name="RespawnTimer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -3.5)
+scale = Vector2(1.15625, 1.10937)
+sprite_frames = SubResource("SpriteFrames_gme5e")
+animation = &"Idle"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

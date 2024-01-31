@@ -286,7 +286,6 @@ position = Vector2(6787, 197)
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_d4fjy")]
 position = Vector2(6787, 197)
 INITALPOSITION = Vector2(200, 500)
-WalljumpHeight = -900
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
 remote_path = NodePath("../../Camera2D")

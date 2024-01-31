@@ -10,6 +10,8 @@ signal floor_hit()
 @onready var StateM = $PlayerSM
 @onready var dash_range = $dash_range
 @onready var ground_recovery_timer = $GroundRecoveryTimer
+@onready var animation_sheet = $AnimatedSprite2D
+
 
 @export var MAX_SPEED = 1500.0
 @export var BASE_ACCELERATION = 20
@@ -37,6 +39,7 @@ var dashingPosition = Vector2(0,0)
 var closestEnemy = Area2D
 
 func _process(delta):
+	
 	if is_on_floor():
 		floor_hit.emit()
 
@@ -133,13 +136,8 @@ func get_closest_enemy() -> Area2D:
 		for enemy in enemies:
 			var distance = position.distance_to(enemy.position)
 			if closest_distance == 0 or distance < closest_distance:
-				var space_state = get_world_2d().direct_space_state
-				var query = PhysicsRayQueryParameters2D.create(enemy.position, position)
-				var result = space_state.intersect_ray(query)
-				if(result):
-					if(result.collider_id == self.get_instance_id()):
-						closest_distance = distance
-						closest_enemy = enemy
+				closest_distance = distance
+				closest_enemy = enemy
 		return closest_enemy
 	else:
 		return null

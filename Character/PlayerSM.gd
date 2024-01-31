@@ -127,6 +127,32 @@ func _get_transition(delta):
 
 func _enter_state(new_state, old_state):
 	parent.text.text = str(states.find_key(new_state), ": ", parent.momentum)
+	match new_state:
+		states.Idle:
+			parent.animation_sheet.play('Idle')
+		states.Run:
+			parent.animation_sheet.play('Run')
+		states.Break:
+			parent.animation_sheet.play('Walk')
+		states.Jump:
+			parent.animation_sheet.play('Jump')
+		states.Fall:
+			parent.animation_sheet.play('Jump')
+		states.WallSlide:
+			parent.animation_sheet.play('WallSlide')		
+		states.WallJump:
+			parent.animation_sheet.play('Jump')
+		states.GroundPound:
+			parent.animation_sheet.play('GroundAtack')
+		states.Dash:
+			parent.animation_sheet.play('Dash')
+			
+		
+	if parent.velocity.x < 0 and !parent.animation_sheet.flip_h:
+		parent.animation_sheet.flip_h = true
+	
+	if parent. velocity.x > 0 and parent.animation_sheet.flip_h:
+		parent.animation_sheet.flip_h = false
 	
 func _exit_state(old_state, new_state):
 	pass

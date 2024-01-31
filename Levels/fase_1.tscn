@@ -99,7 +99,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_i8pua")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_krxfw")]
-position = Vector2(175, 836)
+position = Vector2(422, 896)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
 remote_path = NodePath("../../Camera2D")
@@ -233,7 +233,7 @@ stream = ExtResource("4_65rmi")
 [node name="EnemiesNode" parent="." instance=ExtResource("4_0qb5a")]
 
 [node name="Enemy" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
-position = Vector2(4743, 736)
+position = Vector2(4631, 709)
 
 [node name="Enemy2" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
 position = Vector2(5703, 544)
@@ -249,7 +249,7 @@ position = Vector2(10891, 519)
 collision_mask = 9
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(175, 836)
+position = Vector2(422, 896)
 metadata/_edit_group_ = true
 
 [node name="pause_menu" parent="." instance=ExtResource("8_f4e2u")]
