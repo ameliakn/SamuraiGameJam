@@ -1,11 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://c1e23yn68i1mc"]
+[gd_scene load_steps=33 format=3 uid="uid://4ss8507dqado"]
 
 [ext_resource type="Script" path="res://Levels/fase_1.gd" id="1_7j67f"]
-[ext_resource type="Texture2D" uid="uid://bj87f1brc3q16" path="res://Assets/nivel1.png" id="1_ucd5u"]
+[ext_resource type="Texture2D" uid="uid://en52v6hd3hao" path="res://Assets/nivel1 final.png" id="2_i8pua"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="2_krxfw"]
 [ext_resource type="PackedScene" uid="uid://bkkdfume6jtts" path="res://Objects/enemies_node.tscn" id="4_0qb5a"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="4_4pc0y"]
-[ext_resource type="AudioStream" uid="uid://djg27aw4l346m" path="res://Assets/MusicaCyberJam1.mp3" id="5_8bsko"]
+[ext_resource type="AudioStream" uid="uid://djg27aw4l346m" path="res://Assets/Sons/Musicas/MusicaCyberJam1.mp3" id="4_65rmi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57f1a"]
 size = Vector2(781.487, 313.408)
@@ -76,6 +76,15 @@ size = Vector2(218.085, 911.565)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnkb1"]
 size = Vector2(199.714, 693.71)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wusd7"]
+size = Vector2(193.298, 60.0245)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s0tr"]
+size = Vector2(255, 64.6877)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi5ib"]
+size = Vector2(179.03, 68)
+
 [node name="Fase 1" type="Node2D"]
 position = Vector2(-7, 0)
 script = ExtResource("1_7j67f")
@@ -83,13 +92,13 @@ script = ExtResource("1_7j67f")
 [node name="Fundo Da Fase" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_ucd5u")
+texture = ExtResource("2_i8pua")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2784, 736)
+position = Vector2(175, 836)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_krxfw")]
-position = Vector2(2784, 736)
+position = Vector2(175, 836)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
 remote_path = NodePath("../../Camera2D")
@@ -201,20 +210,38 @@ shape = SubResource("RectangleShape2D_5p8vk")
 position = Vector2(8497.97, -622.107)
 shape = SubResource("RectangleShape2D_lnkb1")
 
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2032.28, -94.0123)
+shape = SubResource("RectangleShape2D_wusd7")
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2414.83, -90.4767)
+shape = SubResource("RectangleShape2D_wusd7")
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7828, -409.156)
+shape = SubResource("RectangleShape2D_5s0tr")
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7350.98, -347)
+shape = SubResource("RectangleShape2D_mi5ib")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_8bsko")
+stream = ExtResource("4_65rmi")
 autoplay = true
 
 [node name="EnemiesNode" parent="." instance=ExtResource("4_0qb5a")]
 
 [node name="Enemy" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
-position = Vector2(4640, 800)
+position = Vector2(4743, 736)
 
 [node name="Enemy2" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
-position = Vector2(5792, 512)
+position = Vector2(5703, 544)
 
 [node name="Enemy3" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
 position = Vector2(8416, 800)
 
 [node name="Enemy4" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
-position = Vector2(8928, 288)
+position = Vector2(8903, 384)
+
+[connection signal="floor_hit" from="CharacterBody2D" to="EnemiesNode" method="_on_character_body_2d_floor_hit"]

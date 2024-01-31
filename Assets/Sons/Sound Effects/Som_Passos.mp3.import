@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjrhsrpvsb3ud"
+path="res://.godot/imported/Som_Passos.mp3-77eb6e9f97e15068f7b1e36fc2ccb516.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sons/Sound Effects/Som_Passos.mp3"
+dest_files=["res://.godot/imported/Som_Passos.mp3-77eb6e9f97e15068f7b1e36fc2ccb516.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
