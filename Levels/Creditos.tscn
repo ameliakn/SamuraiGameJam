@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://e6weyxhfr32q"]
+[gd_scene load_steps=2 format=3 uid="uid://bgeywn2f50ruy"]
 
-[ext_resource type="FontFile" uid="uid://deq3mpas57nxw" path="res://Assets/Fonts/cybero.ttf" id="1_p8laf"]
+[ext_resource type="FontFile" uid="uid://d031pr6aklmjx" path="res://Assets/Fonts/TechnoCharmDemoVersionRegular-ALaZm.otf" id="1_ycfp5"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -16,7 +16,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_p8laf")
+theme_override_fonts/font = ExtResource("1_ycfp5")
 text = "CREDITS
 
 
@@ -44,7 +44,7 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="VBoxContainer/Label/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("1_p8laf")
+theme_override_fonts/font = ExtResource("1_ycfp5")
 text = "Amelia Knackfuss
 Gwendolyn Fonseca
 João Gianelli
@@ -53,7 +53,7 @@ Rafael Cerny"
 
 [node name="-" type="Label" parent="VBoxContainer/Label/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_p8laf")
+theme_override_fonts/font = ExtResource("1_ycfp5")
 text = "-
 -
 -
@@ -63,7 +63,7 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer/Label/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_p8laf")
+theme_override_fonts/font = ExtResource("1_ycfp5")
 text = "Programing
 Level Design
 Background Art
@@ -72,8 +72,10 @@ Sound Design"
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_p8laf")
+theme_override_fonts/font = ExtResource("1_ycfp5")
 text = "FREE ASSETS
+
+
 
 
 
@@ -100,17 +102,18 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/Label2/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_p8laf")
+theme_override_fonts/font = ExtResource("1_ycfp5")
 text = "\"Confirm Beeps\" by Dylan Kelk
 \"Button Deny Spacey\" by Game Audio
 \"SFX Jump Flip.wav\" by Catthulu
 \"Cloud Poof\" by qubodup
 \"music elevator ext\" by Jay_You
-\"Pounding a metal stake with hammer v2.wav\" by CGEffex"
+\"Pounding a metal stake with hammer v2.wav\" by CGEffex
+\"Techno Charm\" by Nirmana Visual"
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_p8laf")
+theme_override_fonts/font = ExtResource("1_ycfp5")
 text = "SPECIAL THANKS"
 horizontal_alignment = 1

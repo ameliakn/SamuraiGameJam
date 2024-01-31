@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bo34qsxsxgqy2" path="res://Objects/enemies_node.tscn" id="4_8xckh"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="5_vaeib"]
 [ext_resource type="AudioStream" uid="uid://ci2xm8jxi0nth" path="res://Assets/Sons/Sound Effects/Character/Som_Morte_Protagonista.mp3" id="7_03c1n"]
-[ext_resource type="PackedScene" uid="uid://e6weyxhfr32q" path="res://Levels/Creditos.tscn" id="8_kkvi1"]
+[ext_resource type="PackedScene" uid="uid://bgeywn2f50ruy" path="res://Levels/Creditos.tscn" id="8_kkvi1"]
 [ext_resource type="Script" path="res://Levels/Creditos.gd" id="9_tuxol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flsds"]
