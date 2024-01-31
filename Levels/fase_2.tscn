@@ -1,5 +1,4 @@
 [gd_scene load_steps=32 format=3 uid="uid://blr3x4fxwkwyw"]
-[gd_scene load_steps=32 format=3 uid="uid://blr3x4fxwkwyw"]
 
 [ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_4nvkq"]
 [ext_resource type="Texture2D" uid="uid://dxxu5np0kd617" path="res://Assets/nivel2.png" id="1_4vohu"]
