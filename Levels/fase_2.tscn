@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://blr3x4fxwkwyw"]
 
-[ext_resource type="Script" path="res://Levels/fase_2.gd" id="1_0tnjt"]
+[ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_4nvkq"]
 [ext_resource type="Texture2D" uid="uid://dxxu5np0kd617" path="res://Assets/nivel2.png" id="1_4vohu"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="2_gymid"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="3_tbmin"]
@@ -75,7 +75,7 @@ size = Vector2(2582.78, 343.824)
 size = Vector2(288.394, 75.7838)
 
 [node name="Fase 2" type="Node2D"]
-script = ExtResource("1_0tnjt")
+script = ExtResource("1_4nvkq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0

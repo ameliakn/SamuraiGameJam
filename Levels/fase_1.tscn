@@ -1,11 +1,12 @@
-[gd_scene load_steps=30 format=3 uid="uid://c1e23yn68i1mc"]
+[gd_scene load_steps=31 format=3 uid="uid://b6cdq7gy6y8c2"]
 
-[ext_resource type="Script" path="res://Levels/fase_1.gd" id="1_7j67f"]
+[ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_ogp6e"]
 [ext_resource type="Texture2D" uid="uid://bj87f1brc3q16" path="res://Assets/nivel1.png" id="1_ucd5u"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="2_krxfw"]
-[ext_resource type="PackedScene" uid="uid://bkkdfume6jtts" path="res://Objects/enemies_node.tscn" id="4_0qb5a"]
+[ext_resource type="PackedScene" path="res://Objects/enemies_node.tscn" id="4_0qb5a"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="4_4pc0y"]
 [ext_resource type="AudioStream" uid="uid://djg27aw4l346m" path="res://Assets/MusicaCyberJam1.mp3" id="5_8bsko"]
+[ext_resource type="PackedScene" uid="uid://2q48f5of7j4b" path="res://Objects/stage_end.tscn" id="7_dcyth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57f1a"]
 size = Vector2(781.487, 313.408)
@@ -78,7 +79,8 @@ size = Vector2(199.714, 693.71)
 
 [node name="Fase 1" type="Node2D"]
 position = Vector2(-7, 0)
-script = ExtResource("1_7j67f")
+script = ExtResource("1_ogp6e")
+next_stage_file = "res://Levels/fase_2.tscn"
 
 [node name="Fundo Da Fase" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -86,10 +88,11 @@ offset_bottom = 40.0
 texture = ExtResource("1_ucd5u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2784, 736)
+position = Vector2(10643, 554)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_krxfw")]
-position = Vector2(2784, 736)
+position = Vector2(10643, 554)
+collision_layer = 9
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
 remote_path = NodePath("../../Camera2D")
@@ -203,7 +206,6 @@ shape = SubResource("RectangleShape2D_lnkb1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_8bsko")
-autoplay = true
 
 [node name="EnemiesNode" parent="." instance=ExtResource("4_0qb5a")]
 
@@ -218,3 +220,9 @@ position = Vector2(8416, 800)
 
 [node name="Enemy4" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
 position = Vector2(8928, 288)
+
+[node name="StageEnd" parent="." instance=ExtResource("7_dcyth")]
+position = Vector2(10891, 519)
+collision_mask = 9
+
+[connection signal="floor_hit" from="CharacterBody2D" to="EnemiesNode" method="_on_character_body_2d_floor_hit"]

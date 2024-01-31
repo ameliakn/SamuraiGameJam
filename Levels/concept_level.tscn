@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://l6h1ptl38jiq"]
+[gd_scene load_steps=11 format=3 uid="uid://cv08urpmm6pyb"]
 
-[ext_resource type="Script" path="res://Levels/concept_level.gd" id="1_wjt70"]
+[ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_c38i1"]
 [ext_resource type="Texture2D" uid="uid://d0enhlpko4e71" path="res://Assets/wall.webp" id="2_gwrci"]
 [ext_resource type="Texture2D" uid="uid://bdn26kkoe3a2k" path="res://Assets/floor.webp" id="3_p2u7v"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="4_ajbd5"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="4_h57px"]
-[ext_resource type="Script" path="res://Levels/EnemiesNode.gd" id="5_vgd6n"]
+[ext_resource type="Script" path="res://globalScripts/EnemiesNode.gd" id="5_vgd6n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gskvs"]
 texture = ExtResource("2_gwrci")
@@ -177,7 +177,7 @@ sources/1 = SubResource("TileSetAtlasSource_tk3s2")
 size = Vector2(480, 746)
 
 [node name="conceptLevel" type="Node2D"]
-script = ExtResource("1_wjt70")
+script = ExtResource("1_c38i1")
 
 [node name="FloorTileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4hua1")
