@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-signal character_hit
+signal floor_hit()
 
 @onready var castRight1 = $CastRight1
 @onready var castRight2 = $CastRight2
@@ -35,6 +35,10 @@ var isGroundAttacking = false
 var isDashing = false
 var dashingPosition = Vector2(0,0)
 var closestEnemy = Area2D
+
+func _process(delta):
+	if is_on_floor():
+		floor_hit.emit()
 
 func _handle_move_input():
 	hInputDirection = Input.get_axis("dir_left", "dir_right") 
