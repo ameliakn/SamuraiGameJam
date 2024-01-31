@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvn4r5rrg5l7j"]
+[gd_scene load_steps=4 format=3 uid="uid://bvn4r5rrg5l7j"]
 
 [ext_resource type="Script" path="res://Objects/pause_menu.gd" id="1_y5vo7"]
+[ext_resource type="AudioStream" uid="uid://fcur3uoqcqo2" path="res://Assets/Sons/Sound Effects/Menu/Som_Confirmar_menu.mp3" id="2_qudi7"]
+[ext_resource type="AudioStream" uid="uid://dvehec1ic3i8g" path="res://Assets/Sons/Sound Effects/Menu/Som_Negar_Menu.wav" id="3_153gi"]
 
 [node name="pause_menu" type="CanvasLayer"]
 process_mode = 3
@@ -27,6 +29,14 @@ text = "Return to Title"
 [node name="quit" type="Button" parent="menu_holder"]
 layout_mode = 2
 text = "Quit"
+
+[node name="confirm_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qudi7")
+bus = &"sfx"
+
+[node name="quit_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_153gi")
+bus = &"sfx"
 
 [connection signal="pressed" from="menu_holder/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="menu_holder/title" to="." method="_on_title_pressed"]

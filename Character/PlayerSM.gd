@@ -17,6 +17,7 @@ func _ready():
 func _input(event):
 	if [states.Idle,states.Run,states.Break].has(state):
 		if Input.is_action_just_pressed("jump") and parent.is_on_floor():
+			parent.audio_jump.play()
 			parent.velocity.y = parent.JUMP_VELOCITY
 			if(parent.hInputDirection > 0):
 				parent.accelerate(1, 1)
@@ -44,7 +45,6 @@ func _input(event):
 func _state_logic(delta):
 	parent._detect_wall_collision()
 	parent._handle_move_input()
-	parent.text.text = str(states.find_key(state), ": ", parent.momentum)
 	parent._apply_gravity(delta)
 	parent._apply_movement()
 
@@ -126,7 +126,6 @@ func _get_transition(delta):
 				return states.Fall
 
 func _enter_state(new_state, old_state):
-	parent.text.text = str(states.find_key(new_state), ": ", parent.momentum)
 	match new_state:
 		states.Idle:
 			parent.animation_sheet.play('Idle')
@@ -139,15 +138,16 @@ func _enter_state(new_state, old_state):
 		states.Fall:
 			parent.animation_sheet.play('Jump')
 		states.WallSlide:
-			parent.animation_sheet.play('WallSlide')		
+			parent.animation_sheet.play('WallSlide')	
 		states.WallJump:
 			parent.animation_sheet.play('Jump')
 		states.GroundPound:
+			parent.audio_groundattack.play()
 			parent.animation_sheet.play('GroundAtack')
 		states.Dash:
+			parent.audio_dash.play()
 			parent.animation_sheet.play('Dash')
 			
-		
 	if parent.velocity.x < 0 and !parent.animation_sheet.flip_h:
 		parent.animation_sheet.flip_h = true
 	
@@ -155,4 +155,6 @@ func _enter_state(new_state, old_state):
 		parent.animation_sheet.flip_h = false
 	
 func _exit_state(old_state, new_state):
-	pass
+	if [states.Run,states.Break].has(old_state):
+		if parent.audio_walk.playing:
+			parent.audio_walk.stop()

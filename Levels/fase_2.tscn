@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://blr3x4fxwkwyw"]
+[gd_scene load_steps=32 format=3 uid="uid://blr3x4fxwkwyw"]
 
 [ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_4nvkq"]
 [ext_resource type="Texture2D" uid="uid://dxxu5np0kd617" path="res://Assets/nivel2.png" id="1_4vohu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="3_tbmin"]
 [ext_resource type="PackedScene" uid="uid://bo34qsxsxgqy2" path="res://Objects/enemies_node.tscn" id="4_63ss2"]
 [ext_resource type="PackedScene" uid="uid://2q48f5of7j4b" path="res://Objects/stage_end.tscn" id="6_7rrs8"]
+[ext_resource type="AudioStream" uid="uid://ci2xm8jxi0nth" path="res://Assets/Sons/Sound Effects/Character/Som_Morte_Protagonista.mp3" id="7_mee1b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3qjy"]
 size = Vector2(1264.05, 1718.72)
@@ -264,5 +265,9 @@ position = Vector2(1696, 480)
 
 [node name="StageEnd" parent="." instance=ExtResource("6_7rrs8")]
 position = Vector2(4001, 381)
+
+[node name="audio_death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_mee1b")
+bus = &"sfx"
 
 [connection signal="floor_hit" from="CharacterBody2D" to="EnemiesNode" method="_on_character_body_2d_floor_hit"]

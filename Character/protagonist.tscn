@@ -1,9 +1,14 @@
-[gd_scene load_steps=56 format=3 uid="uid://h55yeavneday"]
+[gd_scene load_steps=61 format=3 uid="uid://h55yeavneday"]
 
 [ext_resource type="Script" path="res://Character/protagonist.gd" id="1_ewgj8"]
 [ext_resource type="Script" path="res://Character/PlayerSM.gd" id="3_8gnli"]
 [ext_resource type="Texture2D" uid="uid://llfjpp73iwod" path="res://Assets/Sprites/teste.png" id="3_n83x1"]
 [ext_resource type="Texture2D" uid="uid://cxjes8euu2kea" path="res://Assets/Sprites/sajam animations.png" id="4_o10bw"]
+[ext_resource type="AudioStream" uid="uid://cen5c8caw447c" path="res://Assets/Sons/Sound Effects/Character/Som_GroundPound.mp3" id="5_0shem"]
+[ext_resource type="AudioStream" uid="uid://cjrhsrpvsb3ud" path="res://Assets/Sons/Sound Effects/Character/Som_Passos.mp3" id="6_o4arf"]
+[ext_resource type="AudioStream" uid="uid://bsp88pbay060f" path="res://Assets/Sons/Sound Effects/Character/Som_Pulo_e_Walljump.wav" id="7_6hi0q"]
+[ext_resource type="AudioStream" uid="uid://ci2xm8jxi0nth" path="res://Assets/Sons/Sound Effects/Character/Som_Morte_Protagonista.mp3" id="8_04xf7"]
+[ext_resource type="AudioStream" uid="uid://b118gpoit3pib" path="res://Assets/Sons/Sound Effects/Character/Som_Katana_Hit.mp3" id="9_tofxp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6tnc"]
 size = Vector2(64, 120)
@@ -423,13 +428,6 @@ collision_mask = 2
 [node name="PlayerSM" type="Node" parent="."]
 script = ExtResource("3_8gnli")
 
-[node name="TextEdit" type="TextEdit" parent="."]
-offset_left = -55.0
-offset_top = -129.0
-offset_right = 138.0
-offset_bottom = -52.0
-text = "test"
-
 [node name="dash_range" type="Area2D" parent="."]
 collision_mask = 4
 
@@ -442,5 +440,27 @@ one_shot = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i704t")
 animation = &"Jump"
+
+[node name="Audios" type="Node" parent="."]
+
+[node name="audio_groundattack" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("5_0shem")
+bus = &"sfx"
+
+[node name="audio_walk" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("6_o4arf")
+bus = &"sfx"
+
+[node name="audio_jump" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("7_6hi0q")
+bus = &"sfx"
+
+[node name="audio_death" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("8_04xf7")
+bus = &"sfx"
+
+[node name="audio_dash" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("9_tofxp")
+bus = &"sfx"
 
 [connection signal="timeout" from="GroundRecoveryTimer" to="." method="_on_ground_recovery_timer_timeout"]
