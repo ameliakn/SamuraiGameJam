@@ -263,6 +263,6 @@ position = Vector2(1696, 480)
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="StageEnd" parent="." instance=ExtResource("6_7rrs8")]
-position = Vector2(4001, 381)
+position = Vector2(4032, 192)
 
 [connection signal="floor_hit" from="CharacterBody2D" to="EnemiesNode" method="_on_character_body_2d_floor_hit"]
