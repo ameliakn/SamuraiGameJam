@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="4_4pc0y"]
 [ext_resource type="AudioStream" uid="uid://djg27aw4l346m" path="res://Assets/Sons/Musicas/MusicaCyberJam1.mp3" id="4_65rmi"]
 [ext_resource type="PackedScene" uid="uid://2q48f5of7j4b" path="res://Objects/stage_end.tscn" id="7_dcyth"]
-[ext_resource type="PackedScene" uid="uid://bvn4r5rrg5l7j" path="res://Objects/pause_menu.tscn" id="8_f4e2u"]
+[ext_resource type="PackedScene" path="res://Objects/pause_menu.tscn" id="8_f4e2u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57f1a"]
 size = Vector2(781.487, 313.408)
@@ -92,6 +92,13 @@ process_mode = 1
 position = Vector2(-7, 0)
 script = ExtResource("1_ogp6e")
 next_stage_file = "res://Levels/fase_2.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2550.0
+offset_top = -2371.0
+offset_right = 15162.0
+offset_bottom = 3865.0
+color = Color(0.145098, 0.152941, 0.270588, 1)
 
 [node name="Fundo Da Fase" type="TextureRect" parent="."]
 offset_right = 40.0

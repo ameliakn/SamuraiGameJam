@@ -83,6 +83,13 @@ size = Vector2(390.617, 253.533)
 script = ExtResource("1_4nvkq")
 next_stage_file = "res://Levels/fase_3.tscn"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -3200.0
+offset_top = -2112.0
+offset_right = 9280.0
+offset_bottom = 5408.0
+color = Color(0.027451, 0.0588235, 0.168627, 1)
+
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
