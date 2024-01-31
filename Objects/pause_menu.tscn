@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvn4r5rrg5l7j"]
+[gd_scene load_steps=5 format=3 uid="uid://bvn4r5rrg5l7j"]
 
 [ext_resource type="Script" path="res://Objects/pause_menu.gd" id="1_y5vo7"]
+[ext_resource type="Theme" uid="uid://ce6xxqptef1yo" path="res://Assets/Theme Menu/Menu.tres" id="2_o0gms"]
 [ext_resource type="AudioStream" uid="uid://fcur3uoqcqo2" path="res://Assets/Sons/Sound Effects/Menu/Som_Confirmar_menu.mp3" id="2_qudi7"]
 [ext_resource type="AudioStream" uid="uid://dvehec1ic3i8g" path="res://Assets/Sons/Sound Effects/Menu/Som_Negar_Menu.wav" id="3_153gi"]
 
