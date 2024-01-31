@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://blr3x4fxwkwyw"]
+[gd_scene load_steps=32 format=3 uid="uid://blr3x4fxwkwyw"]
 
 [ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_4nvkq"]
 [ext_resource type="Texture2D" uid="uid://dxxu5np0kd617" path="res://Assets/nivel2.png" id="1_4vohu"]
@@ -78,6 +78,9 @@ size = Vector2(288.394, 75.7838)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e53qw"]
 size = Vector2(390.617, 253.533)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6i7t6"]
+size = Vector2(4234, 128)
 
 [node name="Fase 2" type="Node2D"]
 script = ExtResource("1_4nvkq")
@@ -234,6 +237,10 @@ shape = SubResource("RectangleShape2D_wv6uw")
 position = Vector2(1397.04, 3590.23)
 shape = SubResource("RectangleShape2D_e53qw")
 
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2107, -64)
+shape = SubResource("RectangleShape2D_6i7t6")
+
 [node name="EnemiesNode" parent="." instance=ExtResource("4_63ss2")]
 
 [node name="Enemy" parent="EnemiesNode" instance=ExtResource("3_tbmin")]
@@ -255,14 +262,16 @@ position = Vector2(4320, 2656)
 position = Vector2(2944, 992)
 
 [node name="Enemy7" parent="EnemiesNode" instance=ExtResource("3_tbmin")]
-position = Vector2(1376, 928)
+position = Vector2(1376, 864)
 
 [node name="Enemy8" parent="EnemiesNode" instance=ExtResource("3_tbmin")]
-position = Vector2(1696, 480)
+position = Vector2(1696, 384)
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="StageEnd" parent="." instance=ExtResource("6_7rrs8")]
 position = Vector2(4032, 192)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="floor_hit" from="CharacterBody2D" to="EnemiesNode" method="_on_character_body_2d_floor_hit"]
