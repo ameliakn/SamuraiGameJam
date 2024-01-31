@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b604w2lvejmnj"]
+[gd_scene load_steps=5 format=3 uid="uid://b604w2lvejmnj"]
 
 [ext_resource type="Script" path="res://Levels/Menu.gd" id="1_0j5ia"]
-[ext_resource type="Texture2D" uid="uid://ba56fy7q3k0me" path="res://Assets/vira.png" id="1_frygy"]
 [ext_resource type="Theme" uid="uid://ce6xxqptef1yo" path="res://Assets/Theme Menu/Menu.tres" id="3_pf7yr"]
 [ext_resource type="AudioStream" uid="uid://fcur3uoqcqo2" path="res://Assets/Sons/Sound Effects/Menu/Som_Confirmar_menu.mp3" id="4_ofvfr"]
 [ext_resource type="AudioStream" uid="uid://dvehec1ic3i8g" path="res://Assets/Sons/Sound Effects/Menu/Som_Negar_Menu.wav" id="5_alhno"]
@@ -9,11 +8,6 @@
 [node name="Main_menu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_0j5ia")
-
-[node name="Vira" type="Sprite2D" parent="."]
-position = Vector2(638.5, 358)
-scale = Vector2(8.1859, 4.44444)
-texture = ExtResource("1_frygy")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 14
