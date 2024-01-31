@@ -264,7 +264,7 @@ position = Vector2(1696, 480)
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="StageEnd" parent="." instance=ExtResource("6_7rrs8")]
-position = Vector2(4001, 381)
+position = Vector2(4032, 192)
 
 [node name="audio_death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_mee1b")

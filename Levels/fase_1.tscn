@@ -266,7 +266,7 @@ position = Vector2(8416, 800)
 position = Vector2(8903, 384)
 
 [node name="StageEnd" parent="." instance=ExtResource("7_dcyth")]
-position = Vector2(10891, 519)
+position = Vector2(11131.5, 549.724)
 collision_mask = 9
 
 [node name="Camera2D" type="Camera2D" parent="."]
