@@ -82,9 +82,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_4vohu")
 
-[node name="Enemy" parent="." instance=ExtResource("3_tbmin")]
-position = Vector2(2240, 2528)
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_gymid")]
 position = Vector2(2976, 2880)
 
@@ -218,3 +215,14 @@ shape = SubResource("RectangleShape2D_wv6uw")
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(2566.82, 503.58)
 shape = SubResource("RectangleShape2D_wv6uw")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Node2D" instance=ExtResource("3_tbmin")]
+position = Vector2(2240, 2528)
+
+[node name="Enemy2" parent="Node2D" instance=ExtResource("3_tbmin")]
+position = Vector2(2048, 2144)
+
+[node name="Enemy3" parent="Node2D" instance=ExtResource("3_tbmin")]
+position = Vector2(2272, 1728)
