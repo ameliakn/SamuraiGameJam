@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dkwi5bnl18i5l"
+path="res://.godot/imported/Som_Katana_Miss.mp3-6d0952be01447c6acb6f49f52eb8b622.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sons/Sound Effects/Character/Som_Katana_Miss.mp3"
+dest_files=["res://.godot/imported/Som_Katana_Miss.mp3-6d0952be01447c6acb6f49f52eb8b622.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

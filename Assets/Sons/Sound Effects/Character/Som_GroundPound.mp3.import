@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cen5c8caw447c"
+path="res://.godot/imported/Som_GroundPound.mp3-5e0148608880899bf14a8909a61fcd82.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sons/Sound Effects/Character/Som_GroundPound.mp3"
+dest_files=["res://.godot/imported/Som_GroundPound.mp3-5e0148608880899bf14a8909a61fcd82.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

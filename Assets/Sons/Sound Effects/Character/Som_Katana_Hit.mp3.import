@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b118gpoit3pib"
+path="res://.godot/imported/Som_Katana_Hit.mp3-fd1628152723c81b4e1f61c9fb483f00.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sons/Sound Effects/Character/Som_Katana_Hit.mp3"
+dest_files=["res://.godot/imported/Som_Katana_Hit.mp3-fd1628152723c81b4e1f61c9fb483f00.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

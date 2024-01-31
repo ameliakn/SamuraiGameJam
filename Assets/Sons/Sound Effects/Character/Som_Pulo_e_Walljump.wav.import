@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bsp88pbay060f"
+path="res://.godot/imported/Som_Pulo_e_Walljump.wav-d85552229d263b5a76171be5e24edc1a.sample"
+
+[deps]
+
+source_file="res://Assets/Sons/Sound Effects/Character/Som_Pulo_e_Walljump.wav"
+dest_files=["res://.godot/imported/Som_Pulo_e_Walljump.wav-d85552229d263b5a76171be5e24edc1a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,48 +1,50 @@
-[gd_scene load_steps=10 format=3 uid="uid://setq6r3krfui"]
+[gd_scene load_steps=12 format=3 uid="uid://setq6r3krfui"]
 
 [ext_resource type="Script" path="res://Character/flying_enemy.gd" id="1_3use0"]
-[ext_resource type="Texture2D" uid="uid://bp516brnghxvl" path="res://Assets/Sprites/Drone.png" id="3_r5xe4"]
+[ext_resource type="Texture2D" uid="uid://cqo1cjgn1m6cw" path="res://Assets/Sprites/Drone_FInal_V2.png" id="2_5s2xt"]
+[ext_resource type="AudioStream" uid="uid://dk103fp1nqlib" path="res://Assets/Sons/Sound Effects/Enemy/Som_Drone_tomando_dano.wav" id="3_5ojx7"]
+[ext_resource type="AudioStream" uid="uid://2texk2o5diph" path="res://Assets/Sons/Sound Effects/Enemy/Som_Drone_ressureicao.mp3" id="4_qy00e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n270s"]
 size = Vector2(74, 43)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oqpb2"]
-atlas = ExtResource("3_r5xe4")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bygte"]
+atlas = ExtResource("2_5s2xt")
+region = Rect2(256, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0kyf5"]
-atlas = ExtResource("3_r5xe4")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fqoqf"]
-atlas = ExtResource("3_r5xe4")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_473ii"]
-atlas = ExtResource("3_r5xe4")
+[sub_resource type="AtlasTexture" id="AtlasTexture_t78o2"]
+atlas = ExtResource("2_5s2xt")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_npxu8"]
-atlas = ExtResource("3_r5xe4")
-region = Rect2(256, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3qiv"]
+atlas = ExtResource("2_5s2xt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6tac"]
+atlas = ExtResource("2_5s2xt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpl2w"]
+atlas = ExtResource("2_5s2xt")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gme5e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oqpb2")
+"texture": SubResource("AtlasTexture_bygte")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0kyf5")
+"texture": SubResource("AtlasTexture_t78o2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fqoqf")
+"texture": SubResource("AtlasTexture_c3qiv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_473ii")
+"texture": SubResource("AtlasTexture_d6tac")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_npxu8")
+"texture": SubResource("AtlasTexture_dpl2w")
 }],
 "loop": true,
 "name": &"Idle",
@@ -64,5 +66,14 @@ position = Vector2(-5, -3.5)
 scale = Vector2(1.15625, 1.10937)
 sprite_frames = SubResource("SpriteFrames_gme5e")
 animation = &"Idle"
+frame_progress = 0.662727
+
+[node name="death_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5ojx7")
+bus = &"sfx"
+
+[node name="respawn_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qy00e")
+bus = &"sfx"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

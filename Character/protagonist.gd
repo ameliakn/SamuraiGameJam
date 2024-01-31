@@ -1,17 +1,22 @@
 extends CharacterBody2D
 
 signal floor_hit()
+signal player_dead()
 
 @onready var castRight1 = $CastRight1
 @onready var castRight2 = $CastRight2
 @onready var castLeft1 = $CastLeft1
 @onready var castLeft2 = $CastLeft2
-@onready var text = $TextEdit
 @onready var StateM = $PlayerSM
 @onready var dash_range = $dash_range
 @onready var ground_recovery_timer = $GroundRecoveryTimer
 @onready var animation_sheet = $AnimatedSprite2D
 
+@onready var audio_groundattack = $Audios/audio_groundattack
+@onready var audio_walk = $Audios/audio_walk
+@onready var audio_jump = $Audios/audio_jump
+@onready var audio_death = $Audios/audio_death
+@onready var audio_dash = $Audios/audio_dash
 
 @export var MAX_SPEED = 1500.0
 @export var BASE_ACCELERATION = 20
@@ -37,6 +42,9 @@ var isGroundAttacking = false
 var isDashing = false
 var dashingPosition = Vector2(0,0)
 var closestEnemy = Area2D
+
+func _ready():
+	get_tree().paused = false
 
 func _process(delta):
 	
@@ -78,6 +86,10 @@ func _apply_gravity(delta):
 		velocity.y += gravity * delta
 		
 func _apply_movement():
+	if is_on_floor() and velocity.x != 0:
+		if !audio_walk.playing:
+			audio_walk.play()
+	
 	if(isDashing):
 		if(is_position_reached(dashingPosition)):
 			isDashing = false
@@ -118,6 +130,8 @@ func _detect_wall_collision():
 	rightCollide = (castRight1.is_colliding() or castRight2.is_colliding())
 	
 func wall_jump():
+	audio_jump.play()
+	
 	velocity.y = WalljumpHeight
 	if rightCollide:
 		momentum = (momentum * -1) - MIN_WALLJUMP
@@ -191,6 +205,7 @@ func enemy_collision():
 		return false
 	
 func death():
+	player_dead.emit()
 	self.queue_free()
 
 

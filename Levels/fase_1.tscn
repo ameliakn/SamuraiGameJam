@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b6cdq7gy6y8c2"]
+[gd_scene load_steps=37 format=3 uid="uid://b6cdq7gy6y8c2"]
 
 [ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_ogp6e"]
 [ext_resource type="Texture2D" uid="uid://en52v6hd3hao" path="res://Assets/nivel1 final.png" id="2_i8pua"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="4_4pc0y"]
 [ext_resource type="AudioStream" uid="uid://djg27aw4l346m" path="res://Assets/Sons/Musicas/MusicaCyberJam1.mp3" id="4_65rmi"]
 [ext_resource type="PackedScene" uid="uid://2q48f5of7j4b" path="res://Objects/stage_end.tscn" id="7_dcyth"]
-[ext_resource type="PackedScene" uid="uid://drqr8qxe3h5j4" path="res://Objects/pause_menu.tscn" id="8_f4e2u"]
+[ext_resource type="PackedScene" uid="uid://bvn4r5rrg5l7j" path="res://Objects/pause_menu.tscn" id="8_f4e2u"]
+[ext_resource type="AudioStream" uid="uid://ci2xm8jxi0nth" path="res://Assets/Sons/Sound Effects/Character/Som_Morte_Protagonista.mp3" id="9_4migd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57f1a"]
 size = Vector2(781.487, 313.408)
@@ -86,6 +87,9 @@ size = Vector2(255, 64.6877)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi5ib"]
 size = Vector2(179.03, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnh6e"]
+size = Vector2(318, 977)
 
 [node name="Fase 1" type="Node2D"]
 process_mode = 1
@@ -234,9 +238,18 @@ shape = SubResource("RectangleShape2D_5s0tr")
 position = Vector2(7350.98, -347)
 shape = SubResource("RectangleShape2D_mi5ib")
 
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(391.002, 162.911)
+shape = SubResource("RectangleShape2D_57f1a")
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-149, -478.5)
+shape = SubResource("RectangleShape2D_cnh6e")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_65rmi")
 autoplay = true
+bus = &"music"
 
 [node name="EnemiesNode" parent="." instance=ExtResource("4_0qb5a")]
 
@@ -262,4 +275,9 @@ metadata/_edit_group_ = true
 
 [node name="pause_menu" parent="." instance=ExtResource("8_f4e2u")]
 
+[node name="audio_death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_4migd")
+bus = &"sfx"
+
 [connection signal="floor_hit" from="CharacterBody2D" to="EnemiesNode" method="_on_character_body_2d_floor_hit"]
+[connection signal="player_dead" from="CharacterBody2D" to="." method="_on_character_body_2d_player_dead"]
