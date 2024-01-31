@@ -1,12 +1,13 @@
-[gd_scene load_steps=31 format=3 uid="uid://b6cdq7gy6y8c2"]
+[gd_scene load_steps=35 format=3 uid="uid://b6cdq7gy6y8c2"]
 
 [ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_ogp6e"]
 [ext_resource type="Texture2D" uid="uid://en52v6hd3hao" path="res://Assets/nivel1 final.png" id="2_i8pua"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="2_krxfw"]
-[ext_resource type="PackedScene" path="res://Objects/enemies_node.tscn" id="4_0qb5a"]
+[ext_resource type="PackedScene" uid="uid://bo34qsxsxgqy2" path="res://Objects/enemies_node.tscn" id="4_0qb5a"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="4_4pc0y"]
 [ext_resource type="AudioStream" uid="uid://djg27aw4l346m" path="res://Assets/Sons/Musicas/MusicaCyberJam1.mp3" id="4_65rmi"]
 [ext_resource type="PackedScene" uid="uid://2q48f5of7j4b" path="res://Objects/stage_end.tscn" id="7_dcyth"]
+[ext_resource type="PackedScene" uid="uid://bvn4r5rrg5l7j" path="res://Objects/pause_menu.tscn" id="8_f4e2u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57f1a"]
 size = Vector2(781.487, 313.408)
@@ -87,6 +88,7 @@ size = Vector2(255, 64.6877)
 size = Vector2(179.03, 68)
 
 [node name="Fase 1" type="Node2D"]
+process_mode = 1
 position = Vector2(-7, 0)
 script = ExtResource("1_ogp6e")
 next_stage_file = "res://Levels/fase_2.tscn"
@@ -95,9 +97,6 @@ next_stage_file = "res://Levels/fase_2.tscn"
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_i8pua")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(175, 836)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_krxfw")]
 position = Vector2(175, 836)
@@ -230,7 +229,6 @@ shape = SubResource("RectangleShape2D_mi5ib")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_65rmi")
-autoplay = true
 
 [node name="EnemiesNode" parent="." instance=ExtResource("4_0qb5a")]
 
@@ -246,10 +244,14 @@ position = Vector2(8416, 800)
 [node name="Enemy4" parent="EnemiesNode" instance=ExtResource("4_4pc0y")]
 position = Vector2(8903, 384)
 
-[connection signal="floor_hit" from="CharacterBody2D" to="EnemiesNode" method="_on_character_body_2d_floor_hit"]
-
 [node name="StageEnd" parent="." instance=ExtResource("7_dcyth")]
 position = Vector2(10891, 519)
 collision_mask = 9
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(175, 836)
+metadata/_edit_group_ = true
+
+[node name="pause_menu" parent="." instance=ExtResource("8_f4e2u")]
 
 [connection signal="floor_hit" from="CharacterBody2D" to="EnemiesNode" method="_on_character_body_2d_floor_hit"]

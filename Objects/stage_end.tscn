@@ -7,7 +7,6 @@ size = Vector2(138, 205)
 
 [node name="StageEnd" type="Area2D"]
 collision_layer = 8
-collision_mask = 0
 script = ExtResource("1_l88lv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,7 +11,9 @@ func _process(delta):
 	pass
 
 
-func _on_character_body_2d_floor_hit():
-	for child in self.get_children():
-		if child.attacked:
-			child.respawn_enemy()
+func _on_start_game_pressed():
+	get_tree().change_scene_to_file('res://Levels/fase_1.tscn')
+
+
+func _on_quit_game_pressed():
+	get_tree().quit()

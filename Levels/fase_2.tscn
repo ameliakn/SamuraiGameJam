@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://blr3x4fxwkwyw"]
+[gd_scene load_steps=31 format=3 uid="uid://blr3x4fxwkwyw"]
 
 [ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_4nvkq"]
 [ext_resource type="Texture2D" uid="uid://dxxu5np0kd617" path="res://Assets/nivel2.png" id="1_4vohu"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="2_gymid"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="3_tbmin"]
-[ext_resource type="PackedScene" uid="uid://bkkdfume6jtts" path="res://Objects/enemies_node.tscn" id="4_63ss2"]
+[ext_resource type="PackedScene" uid="uid://bo34qsxsxgqy2" path="res://Objects/enemies_node.tscn" id="4_63ss2"]
+[ext_resource type="PackedScene" uid="uid://2q48f5of7j4b" path="res://Objects/stage_end.tscn" id="6_7rrs8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3qjy"]
 size = Vector2(1264.05, 1718.72)
@@ -80,6 +81,7 @@ size = Vector2(390.617, 253.533)
 
 [node name="Fase 2" type="Node2D"]
 script = ExtResource("1_4nvkq")
+next_stage_file = "res://Levels/fase_3.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -88,13 +90,13 @@ texture = ExtResource("1_4vohu")
 metadata/_edit_group_ = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_gymid")]
-position = Vector2(1088, 3424)
+position = Vector2(988, 3449)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1088, 3424)
+position = Vector2(988, 3449)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -252,5 +254,8 @@ position = Vector2(1376, 928)
 position = Vector2(1696, 480)
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="StageEnd" parent="." instance=ExtResource("6_7rrs8")]
+position = Vector2(4001, 381)
 
 [connection signal="floor_hit" from="CharacterBody2D" to="EnemiesNode" method="_on_character_body_2d_floor_hit"]

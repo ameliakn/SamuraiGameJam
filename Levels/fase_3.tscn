@@ -1,9 +1,10 @@
-[gd_scene load_steps=38 format=3 uid="uid://boycgufonq2lj"]
+[gd_scene load_steps=39 format=3 uid="uid://dxccefhcet58j"]
 
+[ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_8xli7"]
 [ext_resource type="Texture2D" uid="uid://couadttxvu6b3" path="res://Assets/nivel3.png" id="1_namvm"]
 [ext_resource type="AudioStream" uid="uid://bjycwis444urn" path="res://Assets/Sons/Musicas/Musica_CyberJam_3.wav" id="2_ybo1m"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="3_fdmea"]
-[ext_resource type="PackedScene" uid="uid://bkkdfume6jtts" path="res://Objects/enemies_node.tscn" id="4_8xckh"]
+[ext_resource type="PackedScene" uid="uid://bo34qsxsxgqy2" path="res://Objects/enemies_node.tscn" id="4_8xckh"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="5_vaeib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flsds"]
@@ -103,6 +104,7 @@ size = Vector2(77.3125, 786.186)
 size = Vector2(339.699, 84.3777)
 
 [node name="fase_3" type="Node2D"]
+script = ExtResource("1_8xli7")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
