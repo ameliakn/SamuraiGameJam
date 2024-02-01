@@ -1,8 +1,8 @@
 [gd_scene load_steps=37 format=3 uid="uid://b6cdq7gy6y8c2"]
 
 [ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_ogp6e"]
-[ext_resource type="Texture2D" uid="uid://en52v6hd3hao" path="res://Assets/nivel1 final.png" id="2_i8pua"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="2_krxfw"]
+[ext_resource type="Texture2D" uid="uid://dwk0jr7mr5gbq" path="res://Assets/nivel1 final final.png" id="2_rqow3"]
 [ext_resource type="PackedScene" uid="uid://bo34qsxsxgqy2" path="res://Objects/enemies_node.tscn" id="4_0qb5a"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="4_4pc0y"]
 [ext_resource type="AudioStream" uid="uid://djg27aw4l346m" path="res://Assets/Sons/Musicas/MusicaCyberJam1.mp3" id="4_65rmi"]
@@ -107,7 +107,7 @@ color = Color(0.145098, 0.152941, 0.270588, 1)
 [node name="Fundo Da Fase" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_i8pua")
+texture = ExtResource("2_rqow3")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_krxfw")]
 position = Vector2(422, 896)
