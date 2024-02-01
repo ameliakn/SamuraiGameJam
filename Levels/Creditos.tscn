@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgeywn2f50ruy"]
+[gd_scene load_steps=3 format=3 uid="uid://bgeywn2f50ruy"]
 
+[ext_resource type="Theme" uid="uid://wfaa1b7qqsdd" path="res://Assets/Theme Menu/CREDITOSTEMA.tres" id="1_pf4gl"]
 [ext_resource type="FontFile" uid="uid://d031pr6aklmjx" path="res://Assets/Fonts/TechnoCharmDemoVersionRegular-ALaZm.otf" id="1_ycfp5"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -13,35 +14,21 @@ offset_top = -4.0
 offset_bottom = 56.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_pf4gl")
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ycfp5")
 text = "CREDITS
 
-
-
-
-
-
 "
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Label"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -144.5
-offset_top = -65.0
-offset_right = 144.5
-offset_bottom = 65.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="VBoxContainer/Label/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_ycfp5")
@@ -51,7 +38,7 @@ João Gianelli
 Nicolas Yamashiro
 Rafael Cerny"
 
-[node name="-" type="Label" parent="VBoxContainer/Label/HBoxContainer"]
+[node name="-" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ycfp5")
 text = "-
@@ -61,7 +48,7 @@ text = "-
 -"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer/Label/HBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ycfp5")
 text = "Programing
@@ -73,34 +60,13 @@ Sound Design"
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ycfp5")
-text = "FREE ASSETS
-
-
-
-
-
-
-
-
+text = "
+FREE ASSETS
 
 "
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Label2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/Label2/HBoxContainer"]
+[node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ycfp5")
 text = "\"Confirm Beeps\" by Dylan Kelk
@@ -109,11 +75,5 @@ text = "\"Confirm Beeps\" by Dylan Kelk
 \"Cloud Poof\" by qubodup
 \"music elevator ext\" by Jay_You
 \"Pounding a metal stake with hammer v2.wav\" by CGEffex
-\"Techno Charm\" by Nirmana Visual"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_ycfp5")
-text = "SPECIAL THANKS"
+\"Techno Charm\" font by Nirmana Visual"
 horizontal_alignment = 1

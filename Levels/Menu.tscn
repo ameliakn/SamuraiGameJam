@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b604w2lvejmnj"]
+[gd_scene load_steps=7 format=3 uid="uid://b604w2lvejmnj"]
 
 [ext_resource type="Script" path="res://Levels/Menu.gd" id="1_0j5ia"]
 [ext_resource type="Texture2D" uid="uid://bhgf65ykm0uvo" path="res://Assets/Imagem Menu.jpg" id="2_iy5my"]
 [ext_resource type="Theme" uid="uid://ce6xxqptef1yo" path="res://Assets/Theme Menu/Menu.tres" id="3_pf7yr"]
 [ext_resource type="AudioStream" uid="uid://fcur3uoqcqo2" path="res://Assets/Sons/Sound Effects/Menu/Som_Confirmar_menu.mp3" id="4_ofvfr"]
 [ext_resource type="AudioStream" uid="uid://dvehec1ic3i8g" path="res://Assets/Sons/Sound Effects/Menu/Som_Negar_Menu.wav" id="5_alhno"]
+[ext_resource type="FontFile" uid="uid://deq3mpas57nxw" path="res://Assets/Fonts/cybero.ttf" id="6_qmogu"]
 
 [node name="Main_menu" type="CanvasLayer"]
 process_mode = 3
@@ -25,13 +26,13 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 200.0
-offset_top = 16.0
+offset_top = -24.0
 offset_right = -200.0
-offset_bottom = 195.0
+offset_bottom = 155.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_pf7yr")
-theme_override_constants/separation = 65
+theme_override_constants/separation = 75
 metadata/_edit_group_ = true
 
 [node name="Start_game" type="Button" parent="VBoxContainer"]
@@ -51,6 +52,25 @@ bus = &"sfx"
 
 [node name="quit_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_alhno")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -379.5
+offset_top = -240.0
+offset_right = 379.5
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8, 0.25098, 0.282353, 1)
+theme_override_colors/font_outline_color = Color(0.145098, 0.152941, 0.270588, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_qmogu")
+theme_override_font_sizes/font_size = 90
+text = "Taste of Revenge"
 
 [connection signal="pressed" from="VBoxContainer/Start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_game" to="." method="_on_quit_game_pressed"]
