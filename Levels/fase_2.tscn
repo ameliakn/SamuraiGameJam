@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://blr3x4fxwkwyw"]
+[gd_scene load_steps=36 format=3 uid="uid://blr3x4fxwkwyw"]
 
 [ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_4nvkq"]
 [ext_resource type="Texture2D" uid="uid://dxxu5np0kd617" path="res://Assets/nivel2.png" id="1_4vohu"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://ci2xm8jxi0nth" path="res://Assets/Sons/Sound Effects/Character/Som_Morte_Protagonista.mp3" id="7_mee1b"]
 [ext_resource type="AudioStream" uid="uid://cx0pws0h3qlw8" path="res://Assets/Sons/Musicas/Musica_CyberJam4.mp3" id="8_1gp5m"]
 [ext_resource type="PackedScene" uid="uid://bvn4r5rrg5l7j" path="res://Objects/pause_menu.tscn" id="9_x7p2o"]
+[ext_resource type="PackedScene" uid="uid://drabj1l83ogbn" path="res://Objects/death_screen.tscn" id="10_keatx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3qjy"]
 size = Vector2(1264.05, 1718.72)
@@ -286,4 +287,7 @@ bus = &"music"
 
 [node name="pause_menu" parent="." instance=ExtResource("9_x7p2o")]
 
+[node name="death_screen" parent="." instance=ExtResource("10_keatx")]
+
 [connection signal="floor_hit" from="CharacterBody2D" to="EnemiesNode" method="_on_character_body_2d_floor_hit"]
+[connection signal="player_dead" from="CharacterBody2D" to="." method="_on_character_body_2d_player_dead"]

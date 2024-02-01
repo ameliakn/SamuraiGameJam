@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b604w2lvejmnj"]
+[gd_scene load_steps=8 format=3 uid="uid://b604w2lvejmnj"]
 
 [ext_resource type="Script" path="res://Levels/Menu.gd" id="1_0j5ia"]
 [ext_resource type="Texture2D" uid="uid://bhgf65ykm0uvo" path="res://Assets/Imagem Menu.jpg" id="2_iy5my"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://fcur3uoqcqo2" path="res://Assets/Sons/Sound Effects/Menu/Som_Confirmar_menu.mp3" id="4_ofvfr"]
 [ext_resource type="AudioStream" uid="uid://dvehec1ic3i8g" path="res://Assets/Sons/Sound Effects/Menu/Som_Negar_Menu.wav" id="5_alhno"]
 [ext_resource type="FontFile" uid="uid://deq3mpas57nxw" path="res://Assets/Fonts/cybero.ttf" id="6_qmogu"]
+[ext_resource type="AudioStream" uid="uid://chi3y4loauu5a" path="res://Assets/Sons/Musicas/Musica_CyberJam_Main_Menu.mp3" id="7_imauf"]
 
 [node name="Main_menu" type="CanvasLayer"]
 process_mode = 3
@@ -71,6 +72,11 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("6_qmogu")
 theme_override_font_sizes/font_size = 90
 text = "Taste of Revenge"
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_imauf")
+autoplay = true
+bus = &"music"
 
 [connection signal="pressed" from="VBoxContainer/Start_game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/quit_game" to="." method="_on_quit_game_pressed"]
