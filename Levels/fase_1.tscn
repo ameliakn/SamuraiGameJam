@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b6cdq7gy6y8c2"]
+[gd_scene load_steps=38 format=3 uid="uid://dh2rpb82ow82u"]
 
 [ext_resource type="Script" path="res://globalScripts/stage_script.gd" id="1_ogp6e"]
 [ext_resource type="PackedScene" uid="uid://h55yeavneday" path="res://Character/protagonist.tscn" id="2_krxfw"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://2q48f5of7j4b" path="res://Objects/stage_end.tscn" id="7_dcyth"]
 [ext_resource type="PackedScene" uid="uid://bvn4r5rrg5l7j" path="res://Objects/pause_menu.tscn" id="8_f4e2u"]
 [ext_resource type="AudioStream" uid="uid://ci2xm8jxi0nth" path="res://Assets/Sons/Sound Effects/Character/Som_Morte_Protagonista.mp3" id="9_4migd"]
-[ext_resource type="PackedScene" uid="uid://drabj1l83ogbn" path="res://Objects/death_screen.tscn" id="10_r8gb2"]
+[ext_resource type="PackedScene" uid="uid://bakg4qhrij6ut" path="res://Objects/death_screen.tscn" id="10_r8gb2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57f1a"]
 size = Vector2(781.487, 313.408)

@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://ci2xm8jxi0nth" path="res://Assets/Sons/Sound Effects/Character/Som_Morte_Protagonista.mp3" id="7_mee1b"]
 [ext_resource type="AudioStream" uid="uid://cx0pws0h3qlw8" path="res://Assets/Sons/Musicas/Musica_CyberJam4.mp3" id="8_1gp5m"]
 [ext_resource type="PackedScene" uid="uid://bvn4r5rrg5l7j" path="res://Objects/pause_menu.tscn" id="9_x7p2o"]
-[ext_resource type="PackedScene" uid="uid://drabj1l83ogbn" path="res://Objects/death_screen.tscn" id="10_keatx"]
+[ext_resource type="PackedScene" uid="uid://bakg4qhrij6ut" path="res://Objects/death_screen.tscn" id="10_keatx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w3qjy"]
 size = Vector2(1264.05, 1718.72)

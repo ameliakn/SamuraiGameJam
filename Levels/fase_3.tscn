@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bo34qsxsxgqy2" path="res://Objects/enemies_node.tscn" id="4_8xckh"]
 [ext_resource type="PackedScene" uid="uid://setq6r3krfui" path="res://Character/flying_enemy.tscn" id="5_vaeib"]
 [ext_resource type="AudioStream" uid="uid://ci2xm8jxi0nth" path="res://Assets/Sons/Sound Effects/Character/Som_Morte_Protagonista.mp3" id="7_03c1n"]
-[ext_resource type="PackedScene" uid="uid://e6weyxhfr32q" path="res://Levels/Creditos.tscn" id="8_kkvi1"]
+[ext_resource type="PackedScene" uid="uid://bgeywn2f50ruy" path="res://Levels/Creditos.tscn" id="8_kkvi1"]
 [ext_resource type="Script" path="res://Levels/Creditos.gd" id="9_tuxol"]
 [ext_resource type="PackedScene" uid="uid://bvn4r5rrg5l7j" path="res://Objects/pause_menu.tscn" id="10_y2hne"]
-[ext_resource type="PackedScene" uid="uid://drabj1l83ogbn" path="res://Objects/death_screen.tscn" id="11_twoqd"]
+[ext_resource type="PackedScene" uid="uid://bakg4qhrij6ut" path="res://Objects/death_screen.tscn" id="11_twoqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flsds"]
 size = Vector2(142.719, 1738)

@@ -1,15 +1,35 @@
-[gd_scene format=3 uid="uid://drabj1l83ogbn"]
+[gd_scene load_steps=3 format=3 uid="uid://bakg4qhrij6ut"]
+
+[ext_resource type="Theme" uid="uid://wfaa1b7qqsdd" path="res://Assets/Theme Menu/CREDITOSTEMA.tres" id="1_wmspg"]
+[ext_resource type="FontFile" uid="uid://deq3mpas57nxw" path="res://Assets/Fonts/cybero.ttf" id="2_gtigf"]
 
 [node name="death_screen" type="CanvasLayer"]
 visible = false
 
 [node name="Label" type="Label" parent="."]
-anchors_preset = 14
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 2
+offset_left = 32.0
+offset_top = 120.0
+offset_right = 388.0
+offset_bottom = 180.0
 grow_vertical = 2
-text = "Morreu, aperte R para reiniciar"
+theme = ExtResource("1_wmspg")
+theme_override_font_sizes/font_size = 41
+text = "Press R to restart"
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_top = 192.0
+offset_right = 573.0
+offset_bottom = 293.0
+grow_horizontal = 2
+theme = ExtResource("1_wmspg")
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_gtigf")
+theme_override_font_sizes/font_size = 95
+text = "DEATH WAS CAST UPON YOU"
